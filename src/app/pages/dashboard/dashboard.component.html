@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <input name="Expression" type="text" class="form-control mt-5" placeholder="100+10-5*3+20/4-sqrt(81)+100000.1928376450" [(ngModel)]="expression">
+            <input name="Presicion" type="text" class="form-control mt-1" placeholder="2" [(ngModel)]="presicion">
+            <button (click)="showResult()" class="btn btn-primary btn-lg btn-block mt-2">Solve!</button>
+
+            <div class="card mt-5">
+                <div class="card-body">
+                    <p class="card-text"><b>Result:  </b>{{result}}</p>
+                </div>
+            </div>    
+
+        </div>
+    </div>
+
+</div>
