@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { MathexpComponent } from './pages/mathexp/mathexp.component';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -20,7 +20,9 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

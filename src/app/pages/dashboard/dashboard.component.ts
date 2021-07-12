@@ -1,3 +1,4 @@
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { MathexpService } from 'src/app/ws/mathexp.service';
 
@@ -16,8 +17,7 @@ export class DashboardComponent implements OnInit {
 
    }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {   }
 
   showResult(){
     this.MathexpService.obtainResult(this.expression, this.presicion).subscribe( data => {

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -10,7 +10,8 @@ export class MathexpService {
   constructor(private http: HttpClient) { }
 
   obtainResult(mathexp:string, presicion:number): Observable<any>{
-      return this.http.get(`https://mathexp.herokuapp.com/api/getSolve?expression=${mathexp}&precision=${presicion}`);
+      var encodedExp = mathexp.replace("+", "%2B");
+      return this.http.get(`https://mathexp.herokuapp.com/api/getSolve?expression=${encodedExp}&precision=${presicion}`);
   }
 
 }
