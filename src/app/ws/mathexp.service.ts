@@ -10,7 +10,7 @@ export class MathexpService {
   constructor(private http: HttpClient) { }
 
   obtainResult(mathexp:string, presicion:number): Observable<any>{
-      var encodedExp = mathexp.replace("+", "%2B");
+      var encodedExp = mathexp.replaceAll("+", "%2B"); //we can't send '+' in url
       return this.http.get(`https://mathexp.herokuapp.com/api/getSolve?expression=${encodedExp}&precision=${presicion}`);
   }
 
